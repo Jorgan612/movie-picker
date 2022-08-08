@@ -16,10 +16,6 @@ const MovieAdder = () => {
     setNewMovie('');
   }
 
-  // const determineMovie = () => {
-  //   return Math.floor(Math.random() * movies.length);
-  // }
-
   return (
     <section className="movie-adder-section">
       <h4>Start by adding movies you like, love, or haven't seen yet!</h4>
