@@ -4,7 +4,7 @@ import MovieContainer from '../components/MovieContainer';
 
 const MovieAdder = () => {
 
-  const [newMovie, setNewMovie] = useState('')
+  const [newMovie, setNewMovie] = useState('');
   const [movies, setMovies] = useState([]);
 
    const addMovie = () => {
@@ -14,7 +14,7 @@ const MovieAdder = () => {
   }
 
   const clearInput = () => {
-    setNewMovie('')
+    setNewMovie('');
   }
 
   const determineMovie = () => {
