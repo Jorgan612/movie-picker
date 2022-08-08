@@ -10,16 +10,15 @@ const MovieAdder = () => {
    const addMovie = () => {
     setMovies([...movies, newMovie]); 
     clearInput(); 
-    console.log('movies array', movies )
   }
 
   const clearInput = () => {
     setNewMovie('');
   }
 
-  const determineMovie = () => {
-    return Math.floor(Math.random() * movies.length);
-  }
+  // const determineMovie = () => {
+  //   return Math.floor(Math.random() * movies.length);
+  // }
 
   return (
     <section className="movie-adder-section">
