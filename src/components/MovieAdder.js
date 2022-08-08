@@ -6,10 +6,19 @@ const MovieAdder = () => {
 
   const [newMovie, setNewMovie] = useState('');
   const [movies, setMovies] = useState([]);
+  const [validInput, setvalidInput] = useState(false);
 
    const addMovie = () => {
-    setMovies([...movies, newMovie]); 
-    clearInput(); 
+    if (newMovie !== '') {
+      setMovies([...movies, newMovie]); 
+      clearInput(); 
+    } else {
+      console.log('empty')
+      // let formValidation = document.createElement('p');
+      // formValidation.innerHTML = 'Uh oh! You didn\'t add a movie title! Fill in the title field before trying to add a new movie title.';
+      // formValidation.classList.add('validation-error-msg');
+      // return 'Uh oh! You didn\'t add a movie title! Fill in the title field before trying to add a new movie title.'
+    }
   }
 
   const clearInput = () => {
