@@ -25,8 +25,8 @@ main h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20vh;
-  border:2px solid yellow;
+  height: 40vh;
+  /* border:2px solid yellow; */
 }
 
 .movie-adder-section input {
@@ -66,17 +66,27 @@ main h1 {
 
 .movie-container-div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 10vh;
-  width: 20vw;
+  align-items: center;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 100vw;
+}
+
+p span {
+  font-weight: bolder;
+  color: #009dff;
 }
 
 .random-movie-btn {
-  width: 50%;
+  width: 25%;
   padding: 10px;
   border: none;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
   font-size: 16px;
   font-weight: bold;
   background-color: rgb(204, 202, 202);
@@ -89,4 +99,9 @@ main h1 {
   color: rgb(204, 202, 202);
   border: 2px solid rgb(204, 202, 202);
   transition: .5s;
+}
+
+.random-movie-text {
+  /* border: 2px solid orange; */
+  width: 25%;
 }

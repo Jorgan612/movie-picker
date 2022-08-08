@@ -13,7 +13,9 @@ const MovieContainer = ({movies}) => {
  return (
   <div className='movie-container-div'>
     <button className='random-movie-btn' onClick={determineMovie}>Get Movie!</button>
-    <p>{randomMovie}</p>
+    {randomMovie ?
+    <p className='random-movie-text'>Let's watch <span>{randomMovie}</span>! Enjoy! 🍿</p> : ''}
+
   </div>
  )
 }
