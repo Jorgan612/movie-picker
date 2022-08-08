@@ -14,7 +14,7 @@ const MovieContainer = ({movies}) => {
   <div className='movie-container-div'>
     <button className='random-movie-btn' onClick={determineMovie}>Get Movie!</button>
     {randomMovie ?
-    <p className='random-movie-text'>Let's watch <span>{randomMovie}</span>! Enjoy! 🍿</p> : ''}
+    <h2 className='random-movie-text'>Let's watch <span className='span-highlight-color'>{randomMovie}</span>! Enjoy! 🍿</h2> : ''}
 
   </div>
  )

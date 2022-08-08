@@ -17,6 +17,11 @@ main h1 {
   color: rgb(204, 202, 202);
 }
 
+.span-highlight-color {
+  font-weight: bolder;
+  color: #009dff;
+}
+
 
 /* add movie section */
 
@@ -74,11 +79,6 @@ main h1 {
   justify-content: center;
   height: 20vh;
   width: 100vw;
-}
-
-p span {
-  font-weight: bolder;
-  color: #009dff;
 }
 
 .random-movie-btn {
