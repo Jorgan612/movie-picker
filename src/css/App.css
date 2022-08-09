@@ -23,8 +23,8 @@ main h1 {
   color: #fff;
 }
 
-/* add movie section */
 
+/* add movie section */
 .movie-adder-section {
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@ main h1 {
 .add-movie-input-div {
   display: flex;
   justify-content: center;
-  height: 15vh;
+  height: 11vh;
   width: 100vw;
   padding: 20px;
 }
@@ -77,13 +77,16 @@ main h1 {
 .add-movie-btn:hover {
   background-color: #333;
   color: #009dff;
-  border: 2px solid rgb(204, 202, 202);
+  border: 2px solid #009dff;
   transition: .5s;
+}
+
+.invalid-input-msg {
+  color: #cb4141;
 }
 
 
 /* movie container */
-
 .movie-container-div {
   display: flex;
   flex-direction: column;

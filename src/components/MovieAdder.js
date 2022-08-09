@@ -1,23 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovieContainer from '../components/MovieContainer';
+
+// const [name, setName] = useState(() => {
+//   // getting stored value
+//   const saved = localStorage.getItem("name");
+//   const initialValue = JSON.parse(saved);
+//   return initialValue || "";
+// });
 
 
 const MovieAdder = () => {
 
   const [newMovie, setNewMovie] = useState('');
-  const [movies, setMovies] = useState([]);
-  const [validInput, setvalidInput] = useState(false);
+  const [validInput, setValidInput] = useState(true);
+  const [movies, setMovies] = useState(() => {
+    const savedMovies = localStorage.getItem('movies');
+    const initialValue = JSON.parse(savedMovies);
+    return initialValue || '';
+  });
+
+  useEffect(() => {
+    localStorage.setItem("movies", JSON.stringify(movies));
+  }, [movies])
 
    const addMovie = () => {
     if (newMovie !== '') {
+      setValidInput(true);
       setMovies([...movies, newMovie]); 
       clearInput(); 
     } else {
-      console.log('empty')
-      // let formValidation = document.createElement('p');
-      // formValidation.innerHTML = 'Uh oh! You didn\'t add a movie title! Fill in the title field before trying to add a new movie title.';
-      // formValidation.classList.add('validation-error-msg');
-      // return 'Uh oh! You didn\'t add a movie title! Fill in the title field before trying to add a new movie title.'
+      setValidInput(false);
     }
   }
 
@@ -32,13 +44,15 @@ const MovieAdder = () => {
         <input 
           type='text' 
           name='title' 
-          placeholder='Movie Title' 
+          placeholder='Movie Title'
+          aria-label="fullname"
           value={newMovie}
           onChange={(event) => setNewMovie(event.target.value)} 
         />
         <button className="add-movie-btn" onClick={addMovie}>+</button>
       </div>
-      {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on movies to be added...</p>}
+      {!validInput && <p className='invalid-input-msg'>Uh oh! You didn't add a movie title! Fill in the title field before trying to add a new movie title.</p>}
+      {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on more movies to be added...</p>}
     </section>
   )
 }

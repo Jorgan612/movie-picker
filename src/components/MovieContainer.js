@@ -15,7 +15,6 @@ const MovieContainer = ({movies}) => {
     <button className='random-movie-btn' onClick={determineMovie}>Get Movie!</button>
     {randomMovie ?
     <h2 className='random-movie-text'>Let's watch <span className='span-highlight-color'>{randomMovie}</span>! Enjoy! 🍿</h2> : ''}
-
   </div>
  )
 }
