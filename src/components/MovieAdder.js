@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
 import MovieContainer from '../components/MovieContainer';
 
-// const [name, setName] = useState(() => {
-//   // getting stored value
-//   const saved = localStorage.getItem("name");
-//   const initialValue = JSON.parse(saved);
-//   return initialValue || "";
-// });
-
-
 const MovieAdder = () => {
 
   const [newMovie, setNewMovie] = useState('');
