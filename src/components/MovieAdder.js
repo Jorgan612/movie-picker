@@ -37,7 +37,7 @@ const MovieAdder = () => {
           type='text' 
           name='title' 
           placeholder='Movie Title'
-          aria-label="fullname"
+          aria-label='move title'
           value={newMovie}
           onChange={(event) => setNewMovie(event.target.value)} 
         />
