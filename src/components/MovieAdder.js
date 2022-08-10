@@ -31,7 +31,7 @@ const MovieAdder = () => {
 
   return (
     <section className="movie-adder-section">
-      <h4>Start by adding movies you like, love, or haven't seen yet!</h4>
+      <p>Start by adding movies you like, love, or haven't seen yet!</p>
       <div className="add-movie-input-div">
         <input 
           type='text' 
