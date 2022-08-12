@@ -21,6 +21,7 @@ main {
   @include heightAndWidth(100vh, 100vw);
   background-color: $dark-bg;
   color: $white;
+  padding: 10px;
 }
 
 main h1 {
@@ -49,6 +50,10 @@ main h1 {
 
 .movie-adder-section input:focus {
   outline:2px solid $blue;
+}
+
+.movie-adder-section p {
+  text-align: center;
 }
 
 .add-movie-input-div {
@@ -87,8 +92,8 @@ main h1 {
 }
 
 .random-movie-btn {
-  @include heightAndWidth(none, 10vw);
-  @include font(16px, bold);
+  @include heightAndWidth(6vh, 10vw);
+  @include font(2vh, bold);
   @include border(none, 10px);
   background-color: $light-bg;
   color: $dark-bg;
