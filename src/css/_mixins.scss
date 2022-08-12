@@ -9,3 +9,13 @@
   height: $height;
   width: $width;
 }
+
+@mixin font($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin border($border, $radius) {
+  border: $border;
+  border-radius: $radius;
+}

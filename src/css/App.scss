@@ -3,9 +3,9 @@
 
 * {
   box-sizing: border-box;
+  color: $light-bg;
   margin: 0;
   padding: 0;
-  color: $light-bg;
 }
 
 button {
@@ -13,7 +13,7 @@ button {
 }
 
 .span-highlight-color {
-  font-weight: bolder;
+  @include font(none, bolder);
   color: $blue;
 }
 
@@ -24,9 +24,9 @@ main {
 }
 
 main h1 {
+  color: $white;
   text-align: center;
   padding: 10px;
-  color: $white;
 }
 
 
@@ -39,14 +39,12 @@ main h1 {
 
 .movie-adder-section input {
   @include heightAndWidth(7vh, 50vw);
+  @include font(18px, bolder);
+  @include border(none, 10px);
   background-color: $light-bg;
   color: $dark-bg;
-  font-weight: bolder;
-  border: none;
-  border-radius: 10px;
   padding: 10px;
   margin-right: 10px;
-  font-size: 18px;
 }
 
 .movie-adder-section input:focus {
@@ -62,19 +60,18 @@ main h1 {
 .add-movie-btn {
   @include flexbox(none, center, center);
   @include heightAndWidth(5vh, 3vw);
-  font-size: 30px;
+  @include font(30px, none);
+  @include border(none, 50%);
   color: $dark-bg;
   background-color: $light-bg;
-  border-radius: 50%;
-  border: none;
   margin-top: 8px;
   padding: 10px;
 }
 
 .add-movie-btn:hover {
+  @include border(2px solid $blue, none);
   background-color: $dark-bg;
   color: $blue;
-  border: 2px solid $blue;
   transition: .5s;
 }
 
@@ -91,25 +88,23 @@ main h1 {
 
 .random-movie-btn {
   @include heightAndWidth(none, 10vw);
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  margin: 10px;
-  font-size: 16px;
-  font-weight: bold;
+  @include font(16px, bold);
+  @include border(none, 10px);
   background-color: $light-bg;
   color: $dark-bg;
+  padding: 10px;
+  margin: 10px;
 }
 
 .random-movie-btn:hover {
+  @include border(2px solid $light-bg, none);
   background-color: $dark-bg;
   color: $light-bg;
-  border: 2px solid $light-bg;
   transition: .5s;
 }
 
 .random-movie-text {
   @include heightAndWidth(none, 100vw);
+  @include font(25px, none);
   text-align: center;
-  font-size: 25px;
 }
