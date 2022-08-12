@@ -1,0 +1,115 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $light-bg;
+}
+
+button {
+  cursor: pointer;
+}
+
+.span-highlight-color {
+  font-weight: bolder;
+  color: $blue;
+}
+
+main {
+  @include heightAndWidth(100vh, 100vw);
+  background-color: $dark-bg;
+  color: $white;
+}
+
+main h1 {
+  text-align: center;
+  padding: 10px;
+  color: $white;
+}
+
+
+/* add movie section */
+.movie-adder-section {
+  @include flexbox(column, none, center);
+  @include heightAndWidth(100vh, none);
+  background-color: $dark-bg;
+}
+
+.movie-adder-section input {
+  @include heightAndWidth(7vh, 50vw);
+  background-color: $light-bg;
+  color: $dark-bg;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.movie-adder-section input:focus {
+  outline:2px solid $blue;
+}
+
+.add-movie-input-div {
+  @include flexbox(none, center, none);
+  @include heightAndWidth(11vh, 100vw);
+  padding: 20px;
+}
+
+.add-movie-btn {
+  @include flexbox(none, center, center);
+  @include heightAndWidth(5vh, 3vw);
+  font-size: 30px;
+  color: $dark-bg;
+  background-color: $light-bg;
+  border-radius: 50%;
+  border: none;
+  margin-top: 8px;
+  padding: 10px;
+}
+
+.add-movie-btn:hover {
+  background-color: $dark-bg;
+  color: $blue;
+  border: 2px solid $blue;
+  transition: .5s;
+}
+
+.invalid-input-msg {
+  color: #cb4141;
+}
+
+
+/* movie container */
+.movie-container-div {
+  @include flexbox(column, center, center);
+  @include heightAndWidth(20vh, 100vw);
+}
+
+.random-movie-btn {
+  @include heightAndWidth(none, 10vw);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $light-bg;
+  color: $dark-bg;
+}
+
+.random-movie-btn:hover {
+  background-color: $dark-bg;
+  color: $light-bg;
+  border: 2px solid $light-bg;
+  transition: .5s;
+}
+
+.random-movie-text {
+  @include heightAndWidth(none, 100vw);
+  text-align: center;
+  font-size: 25px;
+}
