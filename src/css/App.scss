@@ -80,6 +80,22 @@ main h1 {
   transition: .5s;
 }
 
+.movie-list-btn-div {
+  @include flexbox(row, flex-end, none);
+  @include heightAndWidth(5vh, 50vw);
+}
+
+.movie-list-btn {
+  @include heightAndWidth(5vh, 10vw);
+  @include border (none, none);
+  background-color: $dark-bg;
+  color: $blue;
+}
+
+.movie-list-btn:hover {
+  text-decoration: underline;
+}
+
 .invalid-input-msg {
   color: #cb4141;
 }
