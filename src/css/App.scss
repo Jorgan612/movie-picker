@@ -114,6 +114,8 @@ main h1 {
   text-align: center;
 }
 
+
+// Media queries
 @media screen and (max-width: 981px) {
   .random-movie-btn {
     @include heightAndWidth(6vh, 10vw);
