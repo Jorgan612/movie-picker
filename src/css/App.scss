@@ -34,7 +34,7 @@ main h1 {
 /* add movie section */
 .movie-adder-section {
   @include flexbox(column, none, center);
-  @include heightAndWidth(100vh, none);
+  @include heightAndWidth(100vh, 100vw);
   background-color: $dark-bg;
 }
 
@@ -146,11 +146,13 @@ main h1 {
 
 .movie-list-div {
   @include flexbox(none, center, center);
+  @include heightAndWidth(45vh, 100vw);
   flex-wrap: wrap; 
+  overflow-y: scroll;
 }
 
 .movie-article-card {
-  @include flexbox(none, center, center);
+  @include flexbox(column, flex-start, center);
   @include heightAndWidth(20vh, 20vw);
   @include font(18px, bold);
   @include border(2px solid $light-bg, none);
@@ -158,4 +160,23 @@ main h1 {
   margin: 10px;
   text-align: center;
   color: $blue;
+}
+
+.movie-card-top {
+  @include flexbox(none, flex-end, none);
+  @include heightAndWidth(5vh, 100%);
+}
+
+.remove-movie-btn {
+  @include border(none, none);
+  @include font(20px, bolder);
+  background-color: $dark-bg;
+  color: $light-bg;
+  padding: 3px;
+
+}
+
+.movie-name {
+  color: $blue;
+  margin: 20px
 }

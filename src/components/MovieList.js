@@ -1,6 +1,11 @@
 const MovieList = ({movies}) => {
   const listMovies = movies.map((movie) => {
-    return <article className="movie-article-card">{movie}</article>
+    return <article id={movie} className="movie-article-card">
+      <div className="movie-card-top">
+        <button className="remove-movie-btn">X</button>
+      </div>
+      <p className="movie-name">{movie}</p>
+    </article>
   })
 
   return (
