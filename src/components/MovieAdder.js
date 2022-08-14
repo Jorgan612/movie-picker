@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MovieContainer from '../components/MovieContainer';
+import MovieList from './MovieList';
 
 const MovieAdder = () => {
 
   const [newMovie, setNewMovie] = useState('');
   const [validInput, setValidInput] = useState(true);
+  const [editList, setEditList] = useState(false);
   const [movies, setMovies] = useState(() => {
     const savedMovies = localStorage.getItem('movies');
     const initialValue = JSON.parse(savedMovies);
@@ -30,6 +32,10 @@ const MovieAdder = () => {
     setNewMovie('');
   }
 
+  const viewMovieList = () => {
+    setEditList(true);
+  }
+
   return (
     <section className="movie-adder-section">
       <p>Start by adding movies you like, love, or haven't seen yet!</p>
@@ -46,9 +52,10 @@ const MovieAdder = () => {
       </div>
       <div className='movie-list-btn-div'>
         {!validInput && <p className='invalid-input-msg'>Uh oh! Fill in the title field before trying to add a new movie title.</p>}
-        <button className='movie-list-btn' >Edit Movie List</button>
+        <button className='movie-list-btn' onClick={viewMovieList}>Edit Movie List</button>
       </div>
       {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on more movies to be added...</p>}
+      {editList && <MovieList movies={movies}/>}
     </section>
   )
 }
