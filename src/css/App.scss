@@ -177,6 +177,7 @@ main h1 {
 }
 
 .movie-name {
+  @include font(22px, bold);
   color: $blue;
   margin: 20px
 }

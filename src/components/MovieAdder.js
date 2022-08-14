@@ -36,6 +36,14 @@ const MovieAdder = () => {
     setEditList(true);
   }
 
+  const removeMovie = (movieName) => {
+    console.log('param', movieName)
+    const filteredMovies = movies.filter((movie) => {
+      return movie !== movieName;
+    })
+    setMovies(filteredMovies);
+  }
+
   return (
     <section className="movie-adder-section">
       <p>Start by adding movies you like, love, or haven't seen yet!</p>
@@ -55,7 +63,7 @@ const MovieAdder = () => {
         <button className='movie-list-btn' onClick={viewMovieList}>Edit Movie List</button>
       </div>
       {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on more movies to be added...</p>}
-      {editList && <MovieList movies={movies}/>}
+      {editList && <MovieList movies={movies} removeMovie={removeMovie}/>}
     </section>
   )
 }

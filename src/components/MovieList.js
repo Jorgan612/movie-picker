@@ -1,8 +1,8 @@
-const MovieList = ({movies}) => {
+const MovieList = ({movies, removeMovie}) => {
   const listMovies = movies.map((movie) => {
     return <article id={movie} className="movie-article-card">
       <div className="movie-card-top">
-        <button className="remove-movie-btn">X</button>
+        <button id={movie} className="remove-movie-btn" onClick={() => removeMovie(movie)}>X</button>
       </div>
       <p className="movie-name">{movie}</p>
     </article>
