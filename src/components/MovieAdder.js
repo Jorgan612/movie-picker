@@ -36,8 +36,11 @@ const MovieAdder = () => {
     setEditList(true);
   }
 
+  const closeMovieList = () => {
+    setEditList(false);
+  }
+
   const removeMovie = (movieName) => {
-    console.log('param', movieName)
     const filteredMovies = movies.filter((movie) => {
       return movie !== movieName;
     })
@@ -60,10 +63,11 @@ const MovieAdder = () => {
       </div>
       <div className='movie-list-btn-div'>
         {!validInput && <p className='invalid-input-msg'>Uh oh! Fill in the title field before trying to add a new movie title.</p>}
-        <button className='movie-list-btn' onClick={viewMovieList}>Edit Movie List</button>
+        {movies.length > 1 && <button className='movie-list-btn' onClick={viewMovieList}>Edit Movie List</button>}
       </div>
       {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on more movies to be added...</p>}
-      {editList && <MovieList movies={movies} removeMovie={removeMovie}/>}
+      {editList && <button className="close-movie-list-btn" onClick={closeMovieList}>Close List</button>}
+      {editList && <MovieList movies={movies} removeMovie={removeMovie} />}
     </section>
   )
 }
