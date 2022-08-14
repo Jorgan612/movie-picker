@@ -45,7 +45,7 @@ const MovieAdder = () => {
       </div>
       <div className='movie-list-btn-div'>
         {!validInput && <p className='invalid-input-msg'>Uh oh! Fill in the title field before trying to add a new movie title.</p>}
-        <button className='movie-list-btn'>Edit Movie List</button>
+        <button className='movie-list-btn' >Edit Movie List</button>
       </div>
       {movies.length > 1 ? <MovieContainer movies={movies} /> : <p>Waiting on more movies to be added...</p>}
     </section>
