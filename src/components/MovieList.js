@@ -1,6 +1,6 @@
-const MovieList = ({movies, removeMovie, closeMovieList}) => {
+const MovieList = ({movies, removeMovie}) => {
   const listMovies = movies.map((movie) => {
-    return <article id={movie} className="movie-article-card">
+    return <article key ={movie} id={movie} className="movie-article-card">
       <div className="movie-card-top">
         <button id={movie} className="remove-movie-btn" onClick={() => removeMovie(movie)}>X</button>
       </div>
@@ -12,7 +12,6 @@ const MovieList = ({movies, removeMovie, closeMovieList}) => {
     <section className="movie-list-container">
       <div className="movie-list-container-top">
         <h1 className="movie-list-component-title">Movie List</h1>
-        {/* <button className="close-movie-list-btn">Close List</button> */}
       </div>
       <div className="movie-list-div">
         {listMovies}
