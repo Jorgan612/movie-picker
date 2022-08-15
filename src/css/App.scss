@@ -134,19 +134,49 @@ main h1 {
 
 // Media queries
 @media screen and (max-width: 981px) {
+  .movie-adder-section p {
+    @include heightAndWidth(5vh, 90vw);
+  }
+
+  .add-movie-btn {
+    @include heightAndWidth(5vh, 8vw);
+  }
+
+  .movie-list-btn-div {
+    @include flexbox(none, center, center);
+  }
+
+  .movie-list-btn {
+    @include heightAndWidth(5vh, 30vw);
+  }
+
   .random-movie-btn {
     @include heightAndWidth(6vh, 10vw);
-    @include font(2vw, none);
+    @include font(4vw, none);
     display: block;
     min-width: 30vw;
+  }
+
+  .movie-list-container {
+    @include flexbox(column, center, center);
+    @include heightAndWidth(100vh, 100vw);
+    border: 2px solid red;
+  }
+
+  .movie-list-div {
+    @include flexbox(column, none, center);
+    flex-wrap: nowrap;
+    @include heightAndWidth(100vh, 100vw);
+    border: 2px solid yellow;
+    overflow-y: hidden;
   }
 }
 
 // Movie List Component 
 
-.movie-list-container {
-  @include flexbox(column, center, center);
-}
+// .movie-list-container {
+//   @include flexbox(column, center, center);
+// }
 
 .movie-list-container-top {
   @include flexbox(column, center, center);
@@ -203,7 +233,10 @@ main h1 {
   background-color: $dark-bg;
   color: $light-bg;
   padding: 3px;
+}
 
+.remove-movie-btn:hover {
+  color: #cb4141;
 }
 
 .movie-name {
