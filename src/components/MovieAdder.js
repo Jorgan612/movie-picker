@@ -45,6 +45,9 @@ const MovieAdder = () => {
       return movie !== movieName;
     })
     setMovies(filteredMovies);
+    if (filteredMovies.length === 0) {
+      setEditList(false)
+    }
   }
 
   return (
