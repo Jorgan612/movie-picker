@@ -180,7 +180,7 @@ main h1 {
 
 .movie-list-container-top {
   @include flexbox(column, center, center);
-  @include heightAndWidth(7vh, 100%);
+  @include heightAndWidth(10vh, 100%);
   
 }
 
@@ -199,6 +199,7 @@ main h1 {
 }
 
 .close-movie-list-btn {
+  @include heightAndWidth(5vh, 5vw);
   @include border(none, none);
   background-color: $dark-bg;
   color: $light-bg;
