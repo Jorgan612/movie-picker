@@ -6,28 +6,28 @@ const MovieList = ({movies, removeMovie}) => {
   const [searchPhrase, setSearchPhrase] = useState('');
   const [searchedMovie, setSearchedMovie] = useState([]);
 
-  const listMovies = movies.map((movie) => {
-    return (
-      <MovieCard
-        movie={movie}
-        key={movie}
-      />
-      )  
-    })
+  // const listMovies = movies.map((movie) => {
+  //   return (
+  //     <MovieCard
+  //       movie={movie}
+  //       key={movie}
+  //     />
+  //     )  
+  //   })
 
     // useEffect(() => {
     
     // })
 
 
-  // const listMovies = movies.map((movie) => {
-  //   return <article key ={movie} id={movie} className="movie-article-card">
-  //     <div className="movie-card-top">
-  //       <button id={movie} className="remove-movie-btn" onClick={() => removeMovie(movie)}>X</button>
-  //     </div>
-  //     <p className="movie-name">{movie}</p>
-  //   </article>
-  // })
+  const listMovies = movies.map((movie) => {
+    return <article key ={movie} id={movie} className="movie-article-card">
+      <div className="movie-card-top">
+        <button id={movie} className="remove-movie-btn" onClick={() => removeMovie(movie)}>X</button>
+      </div>
+      <p className="movie-name">{movie}</p>
+    </article>
+  })
 
 
   const findMovie = (searchPhrase) => {
@@ -54,9 +54,9 @@ const MovieList = ({movies, removeMovie}) => {
           />
       </div>
       <div className="movie-list-div">
-        {searchedMovie.length > 0 && <MovieCard movie={searchedMovie} removeMovie={removeMovie}/>}
-        {searchedMovie.length < 1 && <MovieCard movie={allMovies} removeMovie={removeMovie}/>}
-        {/* {listMovies} */}
+        {/* {searchedMovie.length > 0 && <MovieCard movie={searchedMovie} removeMovie={removeMovie}/>} */}
+        {/* {searchedMovie.length < 1 && <MovieCard movie={allMovies} removeMovie={removeMovie}/>} */}
+        {listMovies}
       </div>
     </section>
   )
