@@ -1,8 +1,11 @@
 import { useState, useEffect } from  'react';
 
 const MovieList = ({movies, removeMovie}) => {
+  const [allMovies, setAllMovies] = useState(movies);
   const [searchPhrase, setSearchPhrase] = useState('');
-  const [searchedMovie, setSearchedMovie] = useState([])
+  const [searchedMovie, setSearchedMovie] = useState([]);
+
+
   const listMovies = movies.map((movie) => {
     return <article key ={movie} id={movie} className="movie-article-card">
       <div className="movie-card-top">
@@ -12,13 +15,14 @@ const MovieList = ({movies, removeMovie}) => {
     </article>
   })
 
-  useEffect(() => {
+  // useEffect(() => {
     // findMovie();
-  })
+  // })
 
-  const findMovie = () => {
-    const filterMovies = movies.filter((movie) => {
-      return movie === searchPhrase;
+  const findMovie = (searchPhrase) => {
+    setSearchPhrase(searchPhrase);
+    const filterMovies = allMovies.filter((movie) => {
+      return movie.toLowerCase() === searchPhrase.toLowerCase();
     })
     setSearchedMovie(filterMovies);
 
@@ -35,11 +39,12 @@ const MovieList = ({movies, removeMovie}) => {
           type='text'
           value={searchPhrase}
           aria-label='move title'
-          onChange={(event) => setSearchPhrase(event.target.value)}
+          onChange={(event) => findMovie(event.target.value)}
           />
       </div>
       <div className="movie-list-div">
-        {listMovies}
+        {searchedMovie.length > 0 ? findMovie : listMovies}
+        {/* {listMovies} */}
       </div>
     </section>
   )
