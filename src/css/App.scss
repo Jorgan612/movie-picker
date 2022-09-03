@@ -2,6 +2,7 @@
 @import '_variables.scss';
 
 * {
+  background-color: $dark-bg;
   box-sizing: border-box;
   color: $light-bg;
   margin: 0;
@@ -106,6 +107,7 @@ main h1 {
 .movie-container-div {
   @include flexbox(column, center, center);
   @include heightAndWidth(20vh, 100vw);
+  margin: 20px;
 }
 
 .random-movie-btn {
@@ -173,28 +175,18 @@ main h1 {
 }
 
 // Movie List Component 
-
-// .movie-list-container {
-//   @include flexbox(column, center, center);
-// }
-
 .movie-list-container-top {
   @include flexbox(column, center, center);
-  @include heightAndWidth(10vh, 100%);
-  
+  @include heightAndWidth(20vh, 100%);
 }
 
 .movie-list-component-title {
   display: inline;
 }
 
-// .search-field-input {
-//   margin: 20px;
-// }
-
 .close-movie-list-btn-div {
   @include flexbox(none, flex-end, center);
-  @include heightAndWidth(100%, 48%);
+  @include heightAndWidth(5vh, 5vh);
   margin-right: 20px;
 }
 
@@ -212,6 +204,9 @@ main h1 {
 .movie-list-div {
   @include flexbox(none, center, center);
   @include heightAndWidth(45vh, 100vw);
+  @include border(2px solid $light-bg, none);
+  border-right: none;
+  border-left: none;
   flex-wrap: wrap; 
   overflow-y: scroll;
 }
