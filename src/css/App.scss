@@ -203,7 +203,7 @@ main h1 {
 
 .movie-list-div {
   @include flexbox(none, center, center);
-  @include heightAndWidth(45vh, 100vw);
+  @include heightAndWidth(47vh, 100vw);
   @include border(2px solid $light-bg, none);
   border-right: none;
   border-left: none;
